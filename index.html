@@ -1,174 +1,119 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Rishav Rai</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+    body {
+      margin: 0;
+      font-family: 'Courier New', Courier, monospace;
+      background: radial-gradient(circle at center, #0f0f0f 0%, #000000 100%);
+      color: #00ff88;
+      text-align: center;
+    }
 
-body {
-  background: #0f0f0f;
-  font-family: 'Share Tech Mono', monospace;
-  color: #00ff9f;
-  overflow-x: hidden;
-}
+    .container {
+      max-width: 600px;
+      margin: auto;
+      padding: 40px 20px;
+    }
 
-.matrix-bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: black;
-  z-index: -2;
-}
+    h1 {
+      font-size: 3em;
+      text-shadow: 0 0 10px #00ff88;
+      margin-bottom: 10px;
+    }
 
-canvas {
-  display: block;
-}
+    p {
+      font-size: 1.1em;
+      color: #aaffcc;
+      line-height: 1.5;
+      text-shadow: 0 0 5px #00ff88;
+    }
 
-.overlay {
-  position: relative;
-  z-index: 10;
-  max-width: 900px;
-  margin: auto;
-  padding: 3rem 1rem;
-  text-align: center;
-}
+    .section-title {
+      margin-top: 40px;
+      font-size: 1.4em;
+      font-weight: bold;
+      border-bottom: 1px solid #00ff88;
+      padding-bottom: 5px;
+      text-shadow: 0 0 5px #00ff88;
+    }
 
-h1 {
-  font-size: 4rem;
-  text-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff;
-  animation: glitch 1s infinite;
-}
+    ul {
+      list-style: none;
+      padding: 0;
+      font-size: 1em;
+      color: #ccffcc;
+    }
 
-@keyframes glitch {
-  0% { transform: translate(0); }
-  20% { transform: translate(-2px, 2px); }
-  40% { transform: translate(2px, -2px); }
-  60% { transform: translate(-2px, 2px); }
-  80% { transform: translate(2px, -2px); }
-  100% { transform: translate(0); }
-}
+    ul li {
+      padding: 5px 0;
+    }
 
-section {
-  margin-top: 4rem;
-  background: rgba(0, 255, 159, 0.05);
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 0 15px #00ff9f22;
-  backdrop-filter: blur(4px);
-  animation: fadeIn 2s ease-in-out;
-}
+    .buttons {
+      margin-top: 30px;
+    }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
+    .btn {
+      display: inline-block;
+      padding: 12px 20px;
+      margin: 10px;
+      border: 2px solid #00ff88;
+      border-radius: 4px;
+      font-size: 1em;
+      color: #00ff88;
+      background: transparent;
+      text-decoration: none;
+      transition: 0.3s;
+    }
 
-ul {
-  list-style: none;
-  padding: 0;
-  font-size: 1.2rem;
-}
+    .btn:hover {
+      background: #00ff88;
+      color: #000;
+      text-shadow: none;
+    }
 
-.btn {
-  display: inline-block;
-  padding: 1rem 2rem;
-  margin: 1rem;
-  border: 2px solid #00ff9f;
-  color: #00ff9f;
-  background: transparent;
-  border-radius: 25px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  box-shadow: 0 0 15px #00ff9f55;
-}
-
-.btn:hover {
-  background: #00ff9f;
-  color: #000;
-  box-shadow: 0 0 25px #00ff9f;
-}
-
-footer {
-  margin-top: 4rem;
-  color: #0f0;
-  font-size: 0.9rem;
-}
-
+    footer {
+      margin-top: 40px;
+      font-size: 0.8em;
+      color: #55ff99;
+      text-shadow: 0 0 2px #00ff88;
+    }
   </style>
 </head>
 <body>
-  <div class="matrix-bg">
-    <canvas id="matrix"></canvas>
-  </div>  <div class="overlay">
+  <div class="container">
     <h1>RISHAV RAI</h1>
     <p>
-      Hi, I am Rishav Rai — a Data Entry Operator skilled in Advanced Excel, Tally E-Prime, and a little bit of coding.<br>
-      Connect with me: <strong>@rishavrai06</strong> on Telegram & Instagram
-    </p><section>
-  <h2>About Me</h2>
-  <ul>
-    <li><strong>Country:</strong> India</li>
-    <li><strong>Age:</strong> 19</li>
-    <li><strong>Education:</strong> UG B.Com</li>
-  </ul>
-</section>
+      Hi, I am Rishav Rai — a Data Entry Operator skilled in Advanced Excel, Tally E-Prime, and a little bit of coding.<br/>
+      Connect with me: @rishavrai06 on Telegram & Instagram
+    </p>
 
-<section>
-  <h2>Skills</h2>
-  <ul>
-    <li>Data Entry</li>
-    <li>Advanced Excel</li>
-    <li>Tally E-Prime</li>
-    <li>Basic Coding</li>
-  </ul>
-</section>
+    <div class="section-title">About Me</div>
+    <ul>
+      <li><strong>Country:</strong> India</li>
+      <li><strong>Age:</strong> 19</li>
+      <li><strong>Education:</strong> UG B.Com</li>
+    </ul>
 
-<div>
-  <a href="https://t.me/rishavrai06" class="btn" target="_blank">Join Me on Telegram</a>
-  <a href="https://instagram.com/rishavrai06" class="btn" target="_blank">Follow on Instagram</a>
-</div>
+    <div class="section-title">Skills</div>
+    <ul>
+      <li>Data Entry</li>
+      <li>Advanced Excel</li>
+      <li>Tally E-Prime</li>
+      <li>Basic Coding</li>
+    </ul>
 
-<footer>
-  <p>© 2025 Rishav Rai</p>
-</footer>
+    <div class="buttons">
+      <a href="https://t.me/rishavrai06" class="btn" target="_blank">Join Me on Telegram</a>
+      <a href="https://instagram.com/rishavrai06" class="btn" target="_blank">Follow on Instagram</a>
+    </div>
 
-  </div>  <script>
-    const canvas = document.getElementById("matrix");
-    const ctx = canvas.getContext("2d");
-
-    canvas.height = window.innerHeight;
-    canvas.width = window.innerWidth;
-
-    const letters = "01";
-    const fontSize = 14;
-    const columns = canvas.width / fontSize;
-    const drops = Array(Math.floor(columns)).fill(1);
-
-    function drawMatrix() {
-      ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-      ctx.fillStyle = "#0f0";
-      ctx.font = fontSize + "px monospace";
-
-      for (let i = 0; i < drops.length; i++) {
-        const text = letters[Math.floor(Math.random() * letters.length)];
-        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-
-        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-          drops[i] = 0;
-        }
-        drops[i]++;
-      }
-    }
-
-    setInterval(drawMatrix, 33);
-  </script></body>
+    <footer>
+      <p>© 2025 Rishav Rai</p>
+    </footer>
+  </div>
+</body>
 </html>
