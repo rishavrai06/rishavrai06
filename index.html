@@ -5,54 +5,63 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Rishav Rai</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
+
     body {
       margin: 0;
-      font-family: 'Courier New', Courier, monospace;
-      background: radial-gradient(circle at center, #0f0f0f 0%, #000000 100%);
-      color: #00ff88;
+      padding: 0;
+      font-family: 'Orbitron', monospace;
+      background: linear-gradient(135deg, #000000, #0f0f0f, #1a1a1a);
+      color: #00ffcc;
       text-align: center;
+      overflow-x: hidden;
     }
 
     .container {
-      max-width: 600px;
+      max-width: 700px;
       margin: auto;
       padding: 40px 20px;
     }
 
     h1 {
-      font-size: 3em;
-      text-shadow: 0 0 20px #00ff88;
-      margin-bottom: 10px;
-      display: inline-block;
-      animation: spin 0.5s linear infinite;
+      font-size: 3.5em;
+      color: #00ffcc;
+      text-shadow: 0 0 20px #00ffcc, 0 0 40px #00ffcc;
+      margin-bottom: 20px;
+      animation: glowText 2s ease-in-out infinite alternate;
     }
 
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
+    @keyframes glowText {
+      from {
+        text-shadow: 0 0 10px #00ffcc;
+      }
+      to {
+        text-shadow: 0 0 30px #00ffcc, 0 0 60px #00ffcc;
+      }
     }
 
     p {
-      font-size: 1.1em;
-      color: #aaffcc;
-      line-height: 1.5;
-      text-shadow: 0 0 5px #00ff88;
+      font-size: 1.2em;
+      color: #ccffee;
+      line-height: 1.7;
+      text-shadow: 0 0 4px #00ffcc;
     }
 
     .section-title {
+      font-size: 1.5em;
       margin-top: 40px;
-      font-size: 1.4em;
-      font-weight: bold;
-      border-bottom: 1px solid #00ff88;
+      margin-bottom: 10px;
+      border-bottom: 2px solid #00ffcc;
+      display: inline-block;
       padding-bottom: 5px;
-      text-shadow: 0 0 5px #00ff88;
+      text-shadow: 0 0 6px #00ffcc;
     }
 
     ul {
       list-style: none;
       padding: 0;
-      font-size: 1em;
-      color: #ccffcc;
+      font-size: 1.1em;
+      margin: 20px 0;
     }
 
     ul li {
@@ -65,29 +74,49 @@
 
     .btn {
       display: inline-block;
-      padding: 12px 20px;
+      padding: 12px 25px;
       margin: 10px;
-      border: 2px solid #00ff88;
-      border-radius: 4px;
+      border: 2px solid #00ffcc;
+      border-radius: 30px;
       font-size: 1em;
-      color: #00ff88;
+      color: #00ffcc;
       background: transparent;
       text-decoration: none;
       transition: 0.3s;
     }
 
     .btn:hover {
-      background: #00ff88;
+      background: #00ffcc;
       color: #000;
-      text-shadow: none;
+      box-shadow: 0 0 20px #00ffcc;
     }
 
     footer {
-      margin-top: 40px;
-      font-size: 0.8em;
-      color: #55ff99;
-      text-shadow: 0 0 2px #00ff88;
+      margin-top: 50px;
+      font-size: 0.9em;
+      color: #66ffd9;
+      text-shadow: 0 0 2px #00ffcc;
     }
+
+    /* Smooth fade-in effect */
+    .container > * {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.8s forwards;
+    }
+
+    .container > *:nth-child(1) { animation-delay: 0.2s; }
+    .container > *:nth-child(2) { animation-delay: 0.4s; }
+    .container > *:nth-child(3) { animation-delay: 0.6s; }
+    .container > *:nth-child(4) { animation-delay: 0.8s; }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -95,7 +124,7 @@
     <h1>RISHAV RAI</h1>
     <p>
       Hi, I am Rishav Rai — a Data Entry Operator skilled in Advanced Excel, Tally E-Prime, and a little bit of coding.<br/>
-      Connect with me: @rishavrai06 on Telegram & Instagram
+      Connect with me: <strong>@rishavrai06</strong> on Telegram & Instagram
     </p>
 
     <div class="section-title">About Me</div>
