@@ -88,11 +88,25 @@
   </style>
 </head>
 <body>
-  <!-- Trimmed Background Music -->
-  <audio autoplay loop>
+
+  <!-- Trimmed Background Music (initially muted) -->
+  <audio id="bg-music" autoplay loop muted>
     <source src="one of the girls x good for you - the weeknd, jennie & lily-rose depp x selena gomez [edit audio]-[AudioTrimmer.com].mp3" type="audio/mpeg">
     Your browser does not support the audio element.
   </audio>
+
+  <script>
+    // Try to unmute after short delay
+    window.addEventListener('load', () => {
+      const audio = document.getElementById('bg-music');
+      setTimeout(() => {
+        audio.muted = false;
+        audio.play().catch(e => {
+          console.log('Autoplay blocked. User interaction needed.');
+        });
+      }, 1000);
+    });
+  </script>
 
   <div class="container">
     <h1>RISHAV RAI</h1>
