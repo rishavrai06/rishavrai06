@@ -1,143 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Rishav Rai</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Courier New', Courier, monospace;
-      background: radial-gradient(circle at center, #0f0f0f 0%, #000000 100%);
-      color: #00ff88;
-      text-align: center;
-    }
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Rishav Rai | guns.lol</title>
+<style>
+  html,body { height:100%; margin:0; background:#000; overflow:hidden; font-family:"Courier New", monospace; color:#f5e9e2; }
 
-    .container {
-      max-width: 600px;
-      margin: auto;
-      padding: 40px 20px;
-    }
+  #bgVideo {
+    position:fixed; inset:0; width:100%; height:100%; object-fit:cover;
+    z-index:0; filter:contrast(0.7) saturate(0.6) blur(6px) brightness(0.7);
+    transform:scale(1.03);
+  }
 
-    h1 {
-      font-size: 3em;
-      text-shadow: 0 0 10px #00ff88;
-      margin-bottom: 10px;
-    }
+  .wrap { position:relative; z-index:2; text-align:center; padding:50px 20px; }
+  .avatar img { width:160px; border-radius:50%; border:3px solid rgba(255,0,0,0.8); }
 
-    p {
-      font-size: 1.1em;
-      color: #aaffcc;
-      line-height: 1.5;
-      text-shadow: 0 0 5px #00ff88;
-    }
+  .name { font-size:46px; margin:20px 0; color:#ff2b2b; text-shadow:0 0 10px rgba(255,0,0,0.6); }
+  .bio { color:#d8d0cc; font-style:italic; }
 
-    .section-title {
-      margin-top: 40px;
-      font-size: 1.4em;
-      font-weight: bold;
-      border-bottom: 1px solid #00ff88;
-      padding-bottom: 5px;
-      text-shadow: 0 0 5px #00ff88;
-    }
+  .social { margin:20px 0; color:#ffb0b0; }
+  .footer { color:#777; font-size:12px; margin-top:20px; }
 
-    ul {
-      list-style: none;
-      padding: 0;
-      font-size: 1em;
-      color: #ccffcc;
-    }
-
-    ul li {
-      padding: 5px 0;
-    }
-
-    .buttons {
-      margin-top: 30px;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 12px 20px;
-      margin: 10px;
-      border: 2px solid #00ff88;
-      border-radius: 4px;
-      font-size: 1em;
-      color: #00ff88;
-      background: transparent;
-      text-decoration: none;
-      transition: 0.3s;
-    }
-
-    .btn:hover {
-      background: #00ff88;
-      color: #000;
-      text-shadow: none;
-    }
-
-    footer {
-      margin-top: 40px;
-      font-size: 0.8em;
-      color: #55ff99;
-      text-shadow: 0 0 2px #00ff88;
-    }
-
-    audio {
-      display: none;
-    }
-  </style>
+  /* Overlay */
+  #playOverlay {
+    position:fixed; inset:0; display:flex; align-items:center; justify-content:center; z-index:10;
+    background:rgba(0,0,0,0.9);
+  }
+  #playOverlay button {
+    background:linear-gradient(90deg,#ff1a1a,#7bffea);
+    border:0; padding:20px 32px; font-size:22px;
+    border-radius:12px; cursor:pointer; font-weight:700; color:#000;
+  }
+  #playOverlay.fadeOut { animation:fadeOut 1s forwards; }
+  @keyframes fadeOut { to { opacity:0; visibility:hidden; } }
+</style>
 </head>
 <body>
 
-  <!-- Trimmed Background Music (initially muted) -->
-  <audio id="bg-music" autoplay loop muted>
-    <source src="one of the girls x good for you - the weeknd, jennie & lily-rose depp x selena gomez [edit audio]-[AudioTrimmer.com].mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
+<video id="bgVideo" autoplay muted loop playsinline>
+  <source src="https://r2.guns.lol/cc38ad75-72e9-4316-b29e-89a7847fd03f.mp4" type="video/mp4">
+</video>
+
+<div class="wrap">
+  <div class="avatar"><img src="https://r2.guns.lol/1e6e6e44-be8c-44b0-af64-db973f0b4e44.webp" alt="avatar"></div>
+  <h1 class="name">Rishav Rai</h1>
+  <p class="bio">𝙾𝚗𝚌𝚎 𝚞𝚙𝚘𝚗 𝚊 𝚝𝚒𝚖𝚎, 𝚝𝚑𝚎 𝙳𝚎𝚟𝚒𝚕 𝚠𝚊𝚜 𝙶𝚘𝚍’𝚜 𝚖𝚘𝚜𝚝 𝚋𝚎𝚕𝚘𝚟𝚎𝚍 𝚊𝚗𝚐𝚎𝚕</p>
+  <div class="social">Bitcoin: <code>1B14WZ61U1LpbwdDZwUuWYyjjsR1ZqJtfP</code></div>
+
+  <audio id="secondaryAudio" controls preload="auto">
+    <source src="https://r2.guns.lol/4b87bfe0-e73d-4d92-afd7-61518136c249.mp3" type="audio/mp3">
   </audio>
 
-  <script>
-    // Try to unmute after short delay
-    window.addEventListener('load', () => {
-      const audio = document.getElementById('bg-music');
-      setTimeout(() => {
-        audio.muted = false;
-        audio.play().catch(e => {
-          console.log('Autoplay blocked. User interaction needed.');
-        });
-      }, 1000);
-    });
-  </script>
+  <div class="footer">Page Views: 31</div>
+</div>
 
-  <div class="container">
-    <h1>RISHAV RAI</h1>
-    <p>
-      Hi, I am Rishav Rai — a Data Entry Operator skilled in Advanced Excel, Tally E-Prime, and a little bit of coding.<br/>
-      Connect with me: @rishavrai06 on Telegram & Instagram
-    </p>
+<!-- Hidden main soundtrack -->
+<audio id="mainAudio" loop preload="auto">
+  <source src="https://r2.guns.lol/2ec3f421-be5c-45fe-99b2-0549a741a5c9.mp3" type="audio/mp3">
+</audio>
 
-    <div class="section-title">About Me</div>
-    <ul>
-      <li><strong>Country:</strong> India</li>
-      <li><strong>Age:</strong> 19</li>
-      <li><strong>Education:</strong> UG B.Com</li>
-    </ul>
+<div id="playOverlay"><button id="overlayPlayBtn">▶ Enter the Abyss</button></div>
 
-    <div class="section-title">Skills</div>
-    <ul>
-      <li>Data Entry</li>
-      <li>Advanced Excel</li>
-      <li>Tally E-Prime</li>
-      <li>Basic Coding</li>
-    </ul>
+<script>
+const overlay = document.getElementById("playOverlay");
+const overlayBtn = document.getElementById("overlayPlayBtn");
+const mainAudio = document.getElementById("mainAudio");
 
-    <div class="buttons">
-      <a href="https://t.me/rishavrai06" class="btn" target="_blank">Join Me on Telegram</a>
-      <a href="https://instagram.com/rishavrai06" class="btn" target="_blank">Follow on Instagram</a>
-    </div>
+overlayBtn.addEventListener("click", async () => {
+  try {
+    await mainAudio.play();
+    overlay.classList.add("fadeOut");
+    setTimeout(()=> overlay.style.display="none", 1000);
+  } catch (err) {
+    console.error("Playback error:", err);
+    alert("Tap again to enable sound");
+  }
+});
+</script>
 
-    <footer>
-      <p>© 2025 Rishav Rai</p>
-    </footer>
-  </div>
 </body>
 </html>
