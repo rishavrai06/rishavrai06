@@ -1,72 +1,223 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Rishav Rai | guns.lol</title>
-<style>
-  html,body { height:100%; margin:0; background:#000; overflow:hidden; font-family:"Courier New", monospace; color:#f5e9e2; }
+\u003Chtml lang="en">\u003Chead>\u003Cmeta name="color-scheme" content="dark light">
+\u003Cstyle>html,body{background:#121212 !important;color:#E1E3E2 !important;}\u003C/style>
 
-  #bgVideo {
-    position:fixed; inset:0; width:100%; height:100%; object-fit:cover;
-    z-index:0; filter:contrast(0.7) saturate(0.6) blur(6px) brightness(0.7);
-    transform:scale(1.03);
-  }
+  \u003Cmeta charset="utf-8">
+  \u003Cmeta name="viewport" content="width=device-width, initial-scale=1">
+  \u003Ctitle>Rishav Rai | guns.lol\u003C/title>
+  \u003Cstyle>
+html, body {
+  height: 100%;
+  margin: 0;
+  background: #000;
+  overflow: hidden;
+  font-family: "Courier New", monospace;
+  color: #c8c8c8;
+}
 
-  .wrap { position:relative; z-index:2; text-align:center; padding:50px 20px; }
-  .avatar img { width:160px; border-radius:50%; border:3px solid rgba(255,0,0,0.8); }
+/* Background video with eerie filter */
+#bgVideo {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  filter: contrast(0.5) brightness(0.5) blur(3px);
+  transform: scale(1.02);
+}
 
-  .name { font-size:46px; margin:20px 0; color:#ff2b2b; text-shadow:0 0 10px rgba(255,0,0,0.6); }
-  .bio { color:#d8d0cc; font-style:italic; }
+/* Page wrapper */
+.wrap {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 50px 20px;
+}
 
-  .social { margin:20px 0; color:#ffb0b0; }
-  .footer { color:#777; font-size:12px; margin-top:20px; }
+/* Avatar border subtle red glow, enlarged for scarier effect */
+.avatar img {
+  width: 240px; /* enlarged from 160px */
+  border-radius: 50%;
+  border: 3px solid #550000;
+  box-shadow: 0 0 20px #330000;
+  animation: subtlePulse 3s infinite alternate;
+}
 
-  /* Overlay */
-  #playOverlay {
-    position:fixed; inset:0; display:flex; align-items:center; justify-content:center; z-index:10;
-    background:rgba(0,0,0,0.9);
-  }
-  #playOverlay button {
-    background:linear-gradient(90deg,#ff1a1a,#7bffea);
-    border:0; padding:20px 32px; font-size:22px;
-    border-radius:12px; cursor:pointer; font-weight:700; color:#000;
-  }
-  #playOverlay.fadeOut { animation:fadeOut 1s forwards; }
-  @keyframes fadeOut { to { opacity:0; visibility:hidden; } }
-</style>
-</head>
-<body>
+/* Devilish Name */
+.name {
+  font-size: 42px;
+  color: #ff1111;
+  text-shadow: 
+     0 0 2px #ff5555, 
+     0 0 5px #880000, 
+     0 0 10px #aa0000, 
+     0 0 20px #550000;
+  animation: devilFlicker 2.5s infinite alternate;
+}
 
-<video id="bgVideo" autoplay muted loop playsinline>
-  <source src="https://r2.guns.lol/cc38ad75-72e9-4316-b29e-89a7847fd03f.mp4" type="video/mp4">
-</video>
+/* Bio jittery */
+.bio {
+  font-style: italic;
+  color: #aaa;
+  font-size: 18px;
+  text-shadow: 0 0 1px #000;
+  animation: jitter 4s infinite;
+}
 
-<div class="wrap">
-  <div class="avatar"><img src="https://r2.guns.lol/1e6e6e44-be8c-44b0-af64-db973f0b4e44.webp" alt="avatar"></div>
-  <h1 class="name">Rishav Rai</h1>
-  <p class="bio">𝙾𝚗𝚌𝚎 𝚞𝚙𝚘𝚗 𝚊 𝚝𝚒𝚖𝚎, 𝚝𝚑𝚎 𝙳𝚎𝚟𝚒𝚕 𝚠𝚊𝚜 𝙶𝚘𝚍’𝚜 𝚖𝚘𝚜𝚝 𝚋𝚎𝚕𝚘𝚟𝚎𝚍 𝚊𝚗𝚐𝚎𝚕</p>
-  <div class="social">Bitcoin: <code>1B14WZ61U1LpbwdDZwUuWYyjjsR1ZqJtfP</code></div>
+/* BTC address with glitch effect */
+.social {
+  margin: 20px 0;
+  font-size: 18px;
+  color: #ff4444;
+}
+.social code {
+  background: transparent;
+  font-weight: bold;
+  color: #ff4444;
+  text-shadow: 0 0 2px #550000, 0 0 5px #330000;
+  display: inline-block;
+  animation: glitch 2.5s infinite;
+}
 
-  <audio id="secondaryAudio" controls preload="auto">
-    <source src="https://r2.guns.lol/4b87bfe0-e73d-4d92-afd7-61518136c249.mp3" type="audio/mp3">
-  </audio>
+/* Enhanced Dont Click Me link */
+.dontClick {
+  margin: 25px 0;
+  font-size: 28px;          
+  font-weight: bold;
+  color: #ff0000;           
+  text-shadow: 0 0 3px #ff5555, 0 0 6px #880000, 0 0 12px #330000;
+  display: inline-block;
+  animation: glitch 1.5s infinite, flicker 3s infinite;
+  cursor: pointer;
+  text-decoration: underline;
+  letter-spacing: 1px;
+}
 
-  <div class="footer">Page Views: 31</div>
-</div>
+/* Devilish Page Views */
+.footer {
+  color: #ff1111;
+  font-size: 14px;
+  margin-top: 20px;
+  text-shadow: 
+     0 0 2px #ff5555, 
+     0 0 5px #880000, 
+     0 0 10px #aa0000, 
+     0 0 20px #550000;
+  animation: devilFlicker 3s infinite alternate;
+}
 
-<!-- Hidden main soundtrack -->
-<audio id="mainAudio" loop preload="auto">
-  <source src="https://r2.guns.lol/2ec3f421-be5c-45fe-99b2-0549a741a5c9.mp3" type="audio/mp3">
-</audio>
+/* Animations */
+@keyframes flicker {
+  0%,100% {opacity:1;}
+  10%,30%,50%,70% {opacity:0.5;}
+  20%,40%,60%,80% {opacity:0.8;}
+}
 
-<div id="playOverlay"><button id="overlayPlayBtn">▶ Enter the Abyss</button></div>
+@keyframes devilFlicker {
+  0% {text-shadow: 0 0 2px #ff5555, 0 0 5px #880000, 0 0 10px #aa0000, 0 0 20px #550000;}
+  25% {text-shadow: 0 0 3px #ff2222, 0 0 6px #990000, 0 0 12px #cc0000, 0 0 25px #660000;}
+  50% {text-shadow: 0 0 2px #ff5555, 0 0 5px #880000, 0 0 10px #aa0000, 0 0 20px #550000;}
+  75% {text-shadow: 0 0 4px #ff0000, 0 0 8px #aa0000, 0 0 15px #dd0000, 0 0 30px #770000;}
+  100% {text-shadow: 0 0 2px #ff5555, 0 0 5px #880000, 0 0 10px #aa0000, 0 0 20px #550000;}
+}
 
-<script>
+@keyframes jitter {
+  0%,100% {transform:translate(0,0);}
+  25% {transform:translate(-1px,1px);}
+  50% {transform:translate(1px,-1px);}
+  75% {transform:translate(-1px,-1px);}
+}
+
+@keyframes glitch {
+  0% {transform: translate(0,0);}
+  20% {transform: translate(-2px,1px);}
+  40% {transform: translate(2px,-1px);}
+  60% {transform: translate(-1px,2px);}
+  80% {transform: translate(1px,-2px);}
+  100% {transform: translate(0,0);}
+}
+
+@keyframes subtlePulse {
+  0% {opacity:1;}
+  50% {opacity:0.85;}
+  100% {opacity:1;}
+}
+
+/* Red flash overlay */
+#flash {
+  position: fixed;
+  inset: 0;
+  background: rgba(255,0,0,0.1);
+  pointer-events: none;
+  opacity: 0;
+  z-index: 5;
+}
+
+/* Overlay button */
+#playOverlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  background: rgba(0,0,0,0.95);
+}
+#playOverlay button {
+  background: #111;
+  color: #ff4444;
+  border: 1px solid #550000;
+  padding: 18px 30px;
+  font-size: 20px;
+  font-family: "Courier New", monospace;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+#playOverlay button:hover {
+  background: #222;
+  border-color: #aa2222;
+}
+#playOverlay.fadeOut { animation: fadeOut 1s forwards; }
+@keyframes fadeOut { to { opacity:0; visibility:hidden; } }
+\u003C/style>
+ \u003C/head>
+ \u003Cbody>
+  \u003Cvideo id="bgVideo" autoplay="" muted="" loop="" playsinline="">
+   \u003Csource src="https://r2.guns.lol/cc38ad75-72e9-4316-b29e-89a7847fd03f.mp4" type="video/mp4">
+  \u003C/video>
+  \u003Cdiv class="wrap">
+   \u003Cdiv class="avatar">
+    \u003Cimg src="https://r2.guns.lol/1e6e6e44-be8c-44b0-af64-db973f0b4e44.webp" alt="avatar">
+   \u003C/div>
+   \u003Ch1 class="name">Rishav Rai\u003C/h1>
+   \u003Cp class="bio">𝙾𝚗𝚌𝚎 𝚞𝚙𝚘𝚗 𝚊 𝚝𝚒𝚖𝚎, 𝚝𝚑𝚎 𝙳𝚎𝚟𝚒𝚕 𝚠𝚊𝚜 𝙶𝚘𝚍’𝚜 𝚖𝚘𝚜𝚝 𝚋𝚎𝚕𝚘𝚟𝚎𝚍 𝚊𝚗𝚐𝚎𝚕\u003C/p>
+   \u003Cdiv class="social">
+    Bitcoin: \u003Ccode>1B14WZ61U1LpbwdDZwUuWYyjjsR1ZqJtfP\u003C/code>
+   \u003C/div>
+   \u003C!-- Enhanced Dont Click Me link -->
+   \u003Ca href="https://l1nk.dev/dontclickme666" class="dontClick" target="_blank" rel="noopener noreferrer">DON'T CLICK ME\u003C/a>
+   \u003Caudio id="secondaryAudio" controls="" preload="auto">
+    \u003Csource src="https://r2.guns.lol/4b87bfe0-e73d-4d92-afd7-61518136c249.mp3" type="audio/mp3">
+   \u003C/audio>
+   \u003Cdiv class="footer" id="pageViews">Page Views: 31\u003C/div>
+  \u003C/div>
+  \u003C!-- Red flash overlay -->
+  \u003Cdiv id="flash">\u003C/div>
+  \u003C!-- Hidden main soundtrack -->
+  \u003Caudio id="mainAudio" loop="" preload="auto">
+   \u003Csource src="https://r2.guns.lol/2ec3f421-be5c-45fe-99b2-0549a741a5c9.mp3" type="audio/mp3">
+  \u003C/audio>
+  \u003Cdiv id="playOverlay">
+   \u003Cbutton id="overlayPlayBtn">▶ Enter the Abyss\u003C/button>
+  \u003C/div>
+  \u003Cscript>
 const overlay = document.getElementById("playOverlay");
 const overlayBtn = document.getElementById("overlayPlayBtn");
 const mainAudio = document.getElementById("mainAudio");
+const flash = document.getElementById("flash");
 
+// Overlay play button
 overlayBtn.addEventListener("click", async () => {
   try {
     await mainAudio.play();
@@ -77,7 +228,21 @@ overlayBtn.addEventListener("click", async () => {
     alert("Tap again to enable sound");
   }
 });
-</script>
 
-</body>
-</html>
+// Random subtle red flash every few seconds
+setInterval(() => {
+  flash.style.opacity = Math.random() * 0.15;
+  setTimeout(()=> flash.style.opacity=0, 100);
+}, 2000 + Math.random()*3000);
+
+// Page Views increment by 1 every minute
+let pageViewsElem = document.getElementById('pageViews');
+let pageViews = parseInt(pageViewsElem.textContent.replace(/\\D/g,''), 10);
+
+setInterval(() => {
+  pageViews += 1;
+  pageViewsElem.textContent = `Page Views: ${pageViews}`;
+}, 60000); // 1 minute
+\u003C/script>
+ 
+\u003C/body>\u003C/html>
