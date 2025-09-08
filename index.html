@@ -1,10 +1,11 @@
-\u003Chtml lang="en">\u003Chead>\u003Cmeta name="color-scheme" content="dark light">
-\u003Cstyle>html,body{background:#121212 !important;color:#E1E3E2 !important;}\u003C/style>
+DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Rishav Rai | guns.lol</title>
 
-  \u003Cmeta charset="utf-8">
-  \u003Cmeta name="viewport" content="width=device-width, initial-scale=1">
-  \u003Ctitle>Rishav Rai | guns.lol\u003C/title>
-  \u003Cstyle>
+<style>
 html, body {
   height: 100%;
   margin: 0;
@@ -180,38 +181,41 @@ html, body {
 }
 #playOverlay.fadeOut { animation: fadeOut 1s forwards; }
 @keyframes fadeOut { to { opacity:0; visibility:hidden; } }
-\u003C/style>
- \u003C/head>
- \u003Cbody>
-  \u003Cvideo id="bgVideo" autoplay="" muted="" loop="" playsinline="">
-   \u003Csource src="https://r2.guns.lol/cc38ad75-72e9-4316-b29e-89a7847fd03f.mp4" type="video/mp4">
-  \u003C/video>
-  \u003Cdiv class="wrap">
-   \u003Cdiv class="avatar">
-    \u003Cimg src="https://r2.guns.lol/1e6e6e44-be8c-44b0-af64-db973f0b4e44.webp" alt="avatar">
-   \u003C/div>
-   \u003Ch1 class="name">Rishav Rai\u003C/h1>
-   \u003Cp class="bio">𝙾𝚗𝚌𝚎 𝚞𝚙𝚘𝚗 𝚊 𝚝𝚒𝚖𝚎, 𝚝𝚑𝚎 𝙳𝚎𝚟𝚒𝚕 𝚠𝚊𝚜 𝙶𝚘𝚍’𝚜 𝚖𝚘𝚜𝚝 𝚋𝚎𝚕𝚘𝚟𝚎𝚍 𝚊𝚗𝚐𝚎𝚕\u003C/p>
-   \u003Cdiv class="social">
-    Bitcoin: \u003Ccode>1B14WZ61U1LpbwdDZwUuWYyjjsR1ZqJtfP\u003C/code>
-   \u003C/div>
-   \u003C!-- Enhanced Dont Click Me link -->
-   \u003Ca href="https://l1nk.dev/dontclickme666" class="dontClick" target="_blank" rel="noopener noreferrer">DON'T CLICK ME\u003C/a>
-   \u003Caudio id="secondaryAudio" controls="" preload="auto">
-    \u003Csource src="https://r2.guns.lol/4b87bfe0-e73d-4d92-afd7-61518136c249.mp3" type="audio/mp3">
-   \u003C/audio>
-   \u003Cdiv class="footer" id="pageViews">Page Views: 31\u003C/div>
-  \u003C/div>
-  \u003C!-- Red flash overlay -->
-  \u003Cdiv id="flash">\u003C/div>
-  \u003C!-- Hidden main soundtrack -->
-  \u003Caudio id="mainAudio" loop="" preload="auto">
-   \u003Csource src="https://r2.guns.lol/2ec3f421-be5c-45fe-99b2-0549a741a5c9.mp3" type="audio/mp3">
-  \u003C/audio>
-  \u003Cdiv id="playOverlay">
-   \u003Cbutton id="overlayPlayBtn">▶ Enter the Abyss\u003C/button>
-  \u003C/div>
-  \u003Cscript>
+</style>
+</head>
+<body>
+
+<video id="bgVideo" autoplay muted loop playsinline>
+  <source src="https://r2.guns.lol/cc38ad75-72e9-4316-b29e-89a7847fd03f.mp4" type="video/mp4">
+</video>
+
+<div class="wrap">
+  <div class="avatar"><img src="https://r2.guns.lol/1e6e6e44-be8c-44b0-af64-db973f0b4e44.webp" alt="avatar"></div>
+  <h1 class="name">Rishav Rai</h1>
+  <p class="bio">𝙾𝚗𝚌𝚎 𝚞𝚙𝚘𝚗 𝚊 𝚝𝚒𝚖𝚎, 𝚝𝚑𝚎 𝙳𝚎𝚟𝚒𝚕 𝚠𝚊𝚜 𝙶𝚘𝚍’𝚜 𝚖𝚘𝚜𝚝 𝚋𝚎𝚕𝚘𝚟𝚎𝚍 𝚊𝚗𝚐𝚎𝚕</p>
+  <div class="social">Bitcoin: <code>1B14WZ61U1LpbwdDZwUuWYyjjsR1ZqJtfP</code></div>
+
+  <!-- Enhanced Dont Click Me link -->
+  <a href="https://l1nk.dev/dontclickme666" class="dontClick" target="_blank" rel="noopener noreferrer">DON'T CLICK ME</a>
+
+  <audio id="secondaryAudio" controls preload="auto">
+    <source src="https://r2.guns.lol/4b87bfe0-e73d-4d92-afd7-61518136c249.mp3" type="audio/mp3">
+  </audio>
+
+  <div class="footer" id="pageViews">Page Views: 31</div>
+</div>
+
+<!-- Red flash overlay -->
+<div id="flash"></div>
+
+<!-- Hidden main soundtrack -->
+<audio id="mainAudio" loop preload="auto">
+  <source src="https://r2.guns.lol/2ec3f421-be5c-45fe-99b2-0549a741a5c9.mp3" type="audio/mp3">
+</audio>
+
+<div id="playOverlay"><button id="overlayPlayBtn">▶ Enter the Abyss</button></div>
+
+<script>
 const overlay = document.getElementById("playOverlay");
 const overlayBtn = document.getElementById("overlayPlayBtn");
 const mainAudio = document.getElementById("mainAudio");
@@ -237,12 +241,13 @@ setInterval(() => {
 
 // Page Views increment by 1 every minute
 let pageViewsElem = document.getElementById('pageViews');
-let pageViews = parseInt(pageViewsElem.textContent.replace(/\\D/g,''), 10);
+let pageViews = parseInt(pageViewsElem.textContent.replace(/\D/g,''), 10);
 
 setInterval(() => {
   pageViews += 1;
   pageViewsElem.textContent = `Page Views: ${pageViews}`;
 }, 60000); // 1 minute
-\u003C/script>
- 
-\u003C/body>\u003C/html>
+</script>
+
+</body>
+</html>
